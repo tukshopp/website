@@ -10,7 +10,6 @@ export default function HomePage() {
             <Center><img src="/assets/logo-text-primary.svg" width={200} /></Center>
             <Text ta={"center"} mt="xs" size='sm' c={"dimmed"}>Building magic</Text>
             </Box>
-            <Button variant='default' radius={"xl"} rightSection={<ArrowRight02Icon/>}>Join Wait-list</Button>
           </Stack>
         </AppShell.Main>
       </AppShell>
