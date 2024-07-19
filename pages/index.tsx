@@ -1,11 +1,19 @@
-import { Welcome } from '../components/Welcome/Welcome';
-import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
-
+import { AppShell, Box, Button, Center, Stack, Text } from '@mantine/core';
+import {ArrowRight02Icon} from "hugeicons-react"
 export default function HomePage() {
   return (
     <>
-      <Welcome />
-      <ColorSchemeToggle />
+      <AppShell>
+        <AppShell.Main>
+          <Stack h={"100vh"} justify='center' align='center'>
+            <Box>
+            <Center><img src="/assets/logo-text-primary.svg" width={200} /></Center>
+            <Text ta={"center"} mt="xs" size='sm' c={"dimmed"}>Building magic</Text>
+            </Box>
+            <Button variant='default' radius={"xl"} rightSection={<ArrowRight02Icon/>}>Join Wait-list</Button>
+          </Stack>
+        </AppShell.Main>
+      </AppShell>
     </>
   );
 }
