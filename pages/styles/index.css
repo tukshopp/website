@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer tailwind {
+  @tailwind base;
+}
+
+.blob_animation_3s {
+  animation: breathe_10 3s ease-in-out infinite;
+}
+
+.blob_animation_5s {
+  animation: breathe_20 5s ease-in-out infinite;
+}
+.text-slider__word {
+  opacity: 0;
+  display: inline-block;
+  animation: fadeInOut 5s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes breathe_10 {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes breathe_20 {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham-Bold.otf') format('opentype');
+  font-weight: 700; /* Bold weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham-Black.otf') format('opentype');
+  font-weight: 900; /* Black weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham-Book.otf') format('opentype');
+  font-weight: 400; /* Normal weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham-Medium.otf') format('opentype');
+  font-weight: 500; /* Medium weight */
+  font-style: normal;
+}
+
+@import '@mantine/core/styles.css';
+@import '@mantine/core/styles.layer.css';
+@import '@mantine/notifications/styles.css';

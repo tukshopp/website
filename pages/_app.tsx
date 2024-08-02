@@ -1,12 +1,16 @@
-import '@mantine/core/styles.css';
+// import '@mantine/core/styles.css';
+import './styles/index.css';
+import './styles/output.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { MantineProvider } from '@mantine/core';
 import { theme } from '../theme';
+import { Notifications } from '@mantine/notifications';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <MantineProvider theme={theme}>
+      <Notifications position='top-left' />
       <Head>
         <title>TukShopp</title>
         <meta
