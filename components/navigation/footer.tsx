@@ -39,7 +39,7 @@ const Footer = ({ handleWaitListClick }: FooterProps) => {
           <Title order={4} ff={'Gotham'} c={'white'} className="z-10">
             Excited to get started?
           </Title>
-          <Text size="xs" c={'white'} className="z-10">
+          <Text size='sm' c={'white'} className="z-10">
             Join the waitlist to stay informed and be the first to experience it.
           </Text>
           <Button
@@ -70,7 +70,7 @@ const Footer = ({ handleWaitListClick }: FooterProps) => {
             </Link>
           </Flex>
 
-          <Text size="xs" c={'white'} className="z-10">
+          <Text size="sm" c={'white'} className="z-10">
             Connect with us on social media for the latest news and sneak peeks!
           </Text>
         </Flex>

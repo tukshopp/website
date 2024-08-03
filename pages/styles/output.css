@@ -135,16 +135,16 @@
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.space-y-10 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
+}
+
 .space-y-2 > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
-}
-
-.space-y-20 > :not([hidden]) ~ :not([hidden]){
-  --tw-space-y-reverse: 0;
-  margin-top: calc(5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(5rem * var(--tw-space-y-reverse));
 }
 
 .space-y-3 > :not([hidden]) ~ :not([hidden]){
@@ -182,17 +182,12 @@
   text-align: center;
 }
 
-.text-\[8px\]{
-  font-size: 8px;
-}
-
 .font-normal{
   font-weight: 400;
 }
 
-.text-\[\#F97316\]{
-  --tw-text-opacity: 1;
-  color: rgb(249 115 22 / var(--tw-text-opacity));
+.text-inherit{
+  color: inherit;
 }
 
 @layer tailwind {
@@ -763,6 +758,7 @@ video {
 
 .text-slider__word {
   opacity: 0;
+  color: #F97316;
   display: inline-block;
   animation: fadeInOut 5s ease-in-out infinite;
 }
@@ -898,6 +894,12 @@ video {
 
   .md\:w-\[45\%\]{
     width: 45%;
+  }
+
+  .md\:space-y-20 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-y-reverse: 0;
+    margin-top: calc(5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(5rem * var(--tw-space-y-reverse));
   }
 }
 

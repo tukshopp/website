@@ -1,26 +1,11 @@
-import {
-  Box,
-  Flex,
-  List,
-  Text,
-  Title,
-  Select,
-  Button,
-  AppShell,
-  Container,
-  TextInput,
-} from '@mantine/core';
-import axios from 'axios';
 import Image from 'next/image';
+import { useRef } from 'react';
 import NavBar from '@/components/navigation/navbar';
 import Footer from '@/components/navigation/footer';
 import { platformBenefits } from '@/utilities/data';
-import { notifications } from '@mantine/notifications';
-import { useLayoutEffect, useRef, useState } from 'react';
-import {
-  IconMapPinFilled,
-  IconDiscountCheckFilled,
-} from '@tabler/icons-react/dist/cjs/tabler-icons-react.cjs';
+import HomeTextHeader from '@/components/headers/home-text-header';
+import HomeWaitListForm from '@/components/forms/home-waitlist-form';
+import { Box, Flex, List, Text, Title, AppShell, Container } from '@mantine/core';
 
 interface ActiveState {
   code: string;
@@ -36,24 +21,8 @@ export async function getServerSideProps() {
   return { props: { activeStates: data } };
 }
 
-const HeaderWords = ['Food', 'Groceries', 'Drinks'];
-
 export default function HomePage({ activeStates }: { activeStates: ActiveState[] }) {
   const waitListRef = useRef<HTMLDivElement | null>(null);
-
-  const [userEmail, setUserEmail] = useState<string>('');
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [isFormSubmitted, setIsFormSubmitted] = useState<boolean>(false);
-  const [isFormSubmitting, setIsFormSubmitting] = useState<boolean>(false);
-  const [userActiveState, setUserActiveState] = useState<string | null>('Abia');
-
-  useLayoutEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentWordIndex(prevIndex => (prevIndex + 1) % HeaderWords.length);
-    }, 5100);
-
-    return () => clearInterval(interval);
-  }, []);
 
   const handleWaitListRefClick = () => {
     if (waitListRef.current) {
@@ -61,68 +30,15 @@ export default function HomePage({ activeStates }: { activeStates: ActiveState[]
     }
   };
 
-  const handleWaitListSubmit = async () => {
-    try {
-      setIsFormSubmitted(false);
-      setIsFormSubmitting(true);
-
-      if (!userEmail) {
-        setIsFormSubmitting(false);
-
-        return notifications.show({
-          title: 'Message',
-          message: 'Email is required!',
-        });
-      }
-      if (!userActiveState) {
-        setIsFormSubmitting(false);
-
-        return notifications.show({
-          title: 'Message',
-          message: 'State is required!',
-        });
-      }
-
-      const res = await axios.post('https://staging-api.tukshopp.ng/v1/miscellaneous/waitlist', {
-        contactName: '',
-        contactEmail: userEmail,
-        addressTag: userActiveState,
-      });
-
-      if (res.status === 200 || res.status === 201) {
-        setUserEmail('');
-        setUserActiveState('Abia');
-
-        setIsFormSubmitted(true);
-        setIsFormSubmitting(false);
-
-        setTimeout(() => {
-          setIsFormSubmitted(false);
-        }, 5000);
-      }
-
-      setIsFormSubmitting(false);
-    } catch (error) {
-      setIsFormSubmitting(false);
-
-      // console.log('[WAITLIST-ERROR] :: ', error);
-
-      return notifications.show({
-        title: 'Message',
-        message: 'An error occurred, please try again!',
-      });
-    }
-  };
-
   return (
     <>
       <AppShell>
-        <AppShell.Main className="space-y-20">
+        <AppShell.Main className="space-y-10 md:space-y-20">
           {/* NAVBAR */}
           <NavBar />
 
           {/* HEADER */}
-          <Container w={'100%'} className="bg-slate-5 relative">
+          <Container w={'100%'} pt={{ base: 20, sm: 0 }} className="relative">
             <Flex
               wrap={'wrap'}
               direction={{ base: 'column', sm: 'row' }}
@@ -130,62 +46,22 @@ export default function HomePage({ activeStates }: { activeStates: ActiveState[]
             >
               <Box ref={waitListRef} className="space-y-5 w-full md:w-[45%] -mt-10 sm:-mt-0">
                 <Box className="flex space-x-2">
-                  <Text style={{ fontSize: 8 }} fw={'bold'}>
+                  <Text style={{ fontSize: 11 }} fw={'bold'}>
                     Launching soon!
                   </Text>
-                  <span className="hidden lg:block font-normal text-[8px]">
+                  <Text style={{ fontSize: 11 }} fw={'normal'}>
                     Join waitlist and be the first to experience it
-                  </span>
+                  </Text>
+                  {/* <span className="hidden lg:block font-normal text-inherit">
+                    Join waitlist and be the first to experience it
+                  </span> */}
                 </Box>
 
-                <Title style={{ fontFamily: 'Gotham', fontWeight: 800 }} order={1}>
-                  Get your <span className="mantine-Title text-[#F97316] text-slider__word">{HeaderWords[currentWordIndex]}</span> delivered to
-                  your doorstep
-                </Title>
+                <HomeTextHeader />
 
-                <Text size="xs">Everything you need, delivered when you need it.</Text>
+                <Text size="sm">Everything you need, delivered when you need it.</Text>
 
-                <Flex>
-                  <TextInput
-                    w={'60%'}
-                    mr={10}
-                    value={userEmail}
-                    placeholder="Your email address"
-                    onChange={(event) => setUserEmail(event.currentTarget.value)}
-                  />
-                  <Select
-                    w={'40%'}
-                    searchable
-                    placeholder="Location"
-                    data={activeStates.map((state) => ({
-                      value: state?.slug,
-                      label: state?.name,
-                    }))}
-                    value={userActiveState}
-                    onChange={setUserActiveState}
-                    leftSection={<IconMapPinFilled color="#E13D45" size={16} />}
-                  />
-                </Flex>
-
-                {!isFormSubmitted ? (
-                  <Button
-                    bg={'customOrange'}
-                    loading={isFormSubmitting}
-                    loaderProps={{ type: 'dots' }}
-                    onClick={handleWaitListSubmit}
-                    style={{ height: 40, fontSize: 12, borderRadius: 15 }}
-                  >
-                    Join Waitlist
-                  </Button>
-                ) : (
-                  <Flex align={'start'} gap={5}>
-                    <IconDiscountCheckFilled color="green" />
-
-                    <Text size="xs" fw={'bold'}>
-                      Thank you for joining the waitlist! We'll notify you when we launch.
-                    </Text>
-                  </Flex>
-                )}
+                <HomeWaitListForm activeStates={activeStates} />
               </Box>
 
               <Box className="w-full md:w-[45%] h-[400px] md:h-[500px] mt-5 md:mt-0 relative">
@@ -211,7 +87,7 @@ export default function HomePage({ activeStates }: { activeStates: ActiveState[]
               <Title order={4} ff={'Gotham'}>
                 Discover the benefits of our versatile delivery service
               </Title>
-              <Text size="xs">Effortless convenience at your fingertips</Text>
+              <Text size="sm">Effortless convenience at your fingertips</Text>
             </Box>
 
             <Flex
@@ -230,7 +106,7 @@ export default function HomePage({ activeStates }: { activeStates: ActiveState[]
                   justify={'space-between'}
                 >
                   <Box className="relative" h={160} w={200}>
-                    <Box className="relative" h={140} w={180}>
+                    <Box className="relative" h={140} w={190}>
                       <Image alt="" fill className="object- object-fill" src={item.image} />
                     </Box>
 
@@ -243,7 +119,7 @@ export default function HomePage({ activeStates }: { activeStates: ActiveState[]
                     </Box>
                   </Box>
 
-                  <Text fw={'bold'} ff={'Gotham'} size="xs" className="text-center">
+                  <Text fw={'bold'} ff={'Gotham'} size="sm" className="text-center">
                     {item.title}
                   </Text>
                 </Flex>
@@ -259,7 +135,7 @@ export default function HomePage({ activeStates }: { activeStates: ActiveState[]
               direction={{ base: 'column', sm: 'row' }}
               justify={{ sm: 'start', lg: 'space-between' }}
             >
-              <Flex align={'center'} direction={'column'} className="space-y-5 w-full md:w-[45%]">
+              <Flex align={'start'} direction={'column'} className="space-y-5 w-full md:w-[45%]">
                 <Box className="space-y-2">
                   <Text size="xs" c={'customOrange'} ff={'Gotham'} fw={'bold'}>
                     FOR CUSTOMERS
@@ -271,7 +147,7 @@ export default function HomePage({ activeStates }: { activeStates: ActiveState[]
 
                 <List
                   spacing="lg"
-                  size="sm"
+                  size="md"
                   center
                   icon={
                     <Box className="relative" h={30} w={30}>
@@ -321,7 +197,7 @@ export default function HomePage({ activeStates }: { activeStates: ActiveState[]
                 <Box className="absolute bottom-5 left-0 w-[320px] h-[320px] rounded-3xl bg-slate-100 -z-10 blob_animation_3s" />
               </Box>
 
-              <Flex align={'center'} direction={'column'} className="space-y-5 w-full md:w-[45%]">
+              <Flex align={'start'} direction={'column'} className="space-y-5 w-full md:w-[45%]">
                 <Box className="space-y-2">
                   <Text size="xs" c={'customOrange'} ff={'Gotham'} fw={'bold'}>
                     FOR VENDORS
@@ -333,7 +209,7 @@ export default function HomePage({ activeStates }: { activeStates: ActiveState[]
 
                 <List
                   spacing="lg"
-                  size="sm"
+                  size="md"
                   center
                   icon={
                     <Box className="relative" h={30} w={30}>
@@ -362,7 +238,7 @@ export default function HomePage({ activeStates }: { activeStates: ActiveState[]
               direction={{ base: 'column', sm: 'row' }}
               justify={{ sm: 'start', lg: 'space-between' }}
             >
-              <Flex align={'center'} direction={'column'} className="space-y-5 w-full md:w-[45%]">
+              <Flex align={'start'} direction={'column'} className="space-y-5 w-full md:w-[45%]">
                 <Box className="space-y-2">
                   <Text size="xs" c={'customOrange'} ff={'Gotham'} fw={'bold'}>
                     FOR RIDERS
@@ -374,7 +250,7 @@ export default function HomePage({ activeStates }: { activeStates: ActiveState[]
 
                 <List
                   spacing="lg"
-                  size="sm"
+                  size="md"
                   center
                   icon={
                     <Box className="relative" h={30} w={30}>

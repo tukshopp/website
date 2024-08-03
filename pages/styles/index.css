@@ -15,6 +15,7 @@
 }
 .text-slider__word {
   opacity: 0;
+  color: #F97316;
   display: inline-block;
   animation: fadeInOut 5s ease-in-out infinite;
 }
