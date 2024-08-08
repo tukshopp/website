@@ -60,7 +60,7 @@ const Footer = ({ handleWaitListClick }: FooterProps) => {
 
         <Flex align={'center'} justify={'center'} direction={'column'} gap={10} className="z-10">
           <Flex align={'center'} direction={'row'} gap={20}>
-            <Link href="#" target="https://x.com/Tukshopp">
+            <Link href="https://x.com/Tukshopp" target="_blank">
               <IconBrandX size={30} color="white" />
             </Link>
             <Link
