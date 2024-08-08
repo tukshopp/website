@@ -7,6 +7,7 @@ import {
   IconBrandInstagram,
 } from '@tabler/icons-react/dist/cjs/tabler-icons-react.cjs';
 import { Box, Button, Divider, Flex, Text, Title } from '@mantine/core';
+import { IconBrandFacebook } from '@tabler/icons-react';
 
 interface FooterProps {
   handleWaitListClick: () => void;
@@ -39,7 +40,7 @@ const Footer = ({ handleWaitListClick }: FooterProps) => {
           <Title order={4} ff={'Gotham'} c={'white'} className="z-10">
             Excited to get started?
           </Title>
-          <Text size='sm' c={'white'} className="z-10">
+          <Text size="sm" c={'white'} className="z-10">
             Join the waitlist to stay informed and be the first to experience it.
           </Text>
           <Button
@@ -59,14 +60,17 @@ const Footer = ({ handleWaitListClick }: FooterProps) => {
 
         <Flex align={'center'} justify={'center'} direction={'column'} gap={10} className="z-10">
           <Flex align={'center'} direction={'row'} gap={20}>
-            <Link href="#">
+            <Link href="#" target="https://x.com/Tukshopp">
               <IconBrandX size={30} color="white" />
             </Link>
-            <Link href="#">
+            <Link
+              href="https://www.instagram.com/reel/C8ccOl5NSPd/?igsh=aXFvamVoZ3VtNTA4"
+              target="_blank"
+            >
               <IconBrandInstagram size={30} color="white" />
             </Link>
-            <Link href="#">
-              <IconBrandLinkedin size={30} color="white" />
+            <Link href="https://web.facebook.com/profile.php?id=61563006697064" target="_blank">
+              <IconBrandFacebook size={30} color="white" />
             </Link>
           </Flex>
 
