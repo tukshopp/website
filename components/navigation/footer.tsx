@@ -64,7 +64,7 @@ const Footer = ({ handleWaitListClick }: FooterProps) => {
               <IconBrandX size={30} color="white" />
             </Link>
             <Link
-              href="https://www.instagram.com/reel/C8ccOl5NSPd/?igsh=aXFvamVoZ3VtNTA4"
+              href="https://www.instagram.com/tukshoppapp/"
               target="_blank"
             >
               <IconBrandInstagram size={30} color="white" />
