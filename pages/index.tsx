@@ -17,7 +17,6 @@ interface ActiveState {
 export async function getServerSideProps() {
   const res = await fetch('https://staging-api.tukshopp.ng/v1/miscellaneous/states');
   const data = await res.json();
-
   return { props: { activeStates: data } };
 }
 
