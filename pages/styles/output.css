@@ -1,192 +1,192 @@
 @tailwind base;
 
-.absolute{
+.absolute {
   position: absolute;
 }
 
-.relative{
+.relative {
   position: relative;
 }
 
-.-top-16{
+.-top-16 {
   top: -4rem;
 }
 
-.bottom-0{
+.bottom-0 {
   bottom: 0px;
 }
 
-.bottom-5{
+.bottom-5 {
   bottom: 1.25rem;
 }
 
-.left-0{
+.left-0 {
   left: 0px;
 }
 
-.right-0{
+.right-0 {
   right: 0px;
 }
 
-.right-\[30vw\]{
+.right-\[30vw\] {
   right: 30vw;
 }
 
-.top-0{
+.top-0 {
   top: 0px;
 }
 
-.-z-10{
+.-z-10 {
   z-index: -10;
 }
 
-.mx-auto{
+.mx-auto {
   margin-left: auto;
   margin-right: auto;
 }
 
-.-mt-10{
+.-mt-10 {
   margin-top: -2.5rem;
 }
 
-.mt-10{
+.mt-10 {
   margin-top: 2.5rem;
 }
 
-.mt-5{
+.mt-5 {
   margin-top: 1.25rem;
 }
 
-.mt-\[26px\]{
+.mt-\[26px\] {
   margin-top: 26px;
 }
 
-.block{
+.block {
   display: block;
 }
 
-.flex{
+.flex {
   display: flex;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
-.h-\[100px\]{
+.h-\[100px\] {
   height: 100px;
 }
 
-.h-\[200px\]{
+.h-\[200px\] {
   height: 200px;
 }
 
-.h-\[250px\]{
+.h-\[250px\] {
   height: 250px;
 }
 
-.h-\[300px\]{
+.h-\[300px\] {
   height: 300px;
 }
 
-.h-\[320px\]{
+.h-\[320px\] {
   height: 320px;
 }
 
-.h-\[340px\]{
+.h-\[340px\] {
   height: 340px;
 }
 
-.h-\[400px\]{
+.h-\[400px\] {
   height: 400px;
 }
 
-.h-full{
+.h-full {
   height: 100%;
 }
 
-.w-\[160px\]{
+.w-\[160px\] {
   width: 160px;
 }
 
-.w-\[240px\]{
+.w-\[240px\] {
   width: 240px;
 }
 
-.w-\[280px\]{
+.w-\[280px\] {
   width: 280px;
 }
 
-.w-\[320px\]{
+.w-\[320px\] {
   width: 320px;
 }
 
-.w-\[480px\]{
+.w-\[480px\] {
   width: 480px;
 }
 
-.w-full{
+.w-full {
   width: 100%;
 }
 
-.space-x-2 > :not([hidden]) ~ :not([hidden]){
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.space-y-10 > :not([hidden]) ~ :not([hidden]){
+.space-y-10 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
 }
 
-.space-y-2 > :not([hidden]) ~ :not([hidden]){
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
 }
 
-.space-y-3 > :not([hidden]) ~ :not([hidden]){
+.space-y-3 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
 }
 
-.space-y-5 > :not([hidden]) ~ :not([hidden]){
+.space-y-5 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
 }
 
-.rounded-3xl{
+.rounded-3xl {
   border-radius: 1.5rem;
 }
 
-.bg-slate-100{
+.bg-slate-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
 }
 
-.object-cover{
+.object-cover {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
-.object-fill{
+.object-fill {
   -o-object-fit: fill;
-     object-fit: fill;
+  object-fit: fill;
 }
 
-.text-center{
+.text-center {
   text-align: center;
 }
 
-.font-normal{
+.font-normal {
   font-weight: 400;
 }
 
-.text-inherit{
+.text-inherit {
   color: inherit;
 }
 
@@ -201,8 +201,8 @@
 */
 
   *,
-::before,
-::after {
+  ::before,
+  ::after {
     box-sizing: border-box;
     /* 1 */
     border-width: 0;
@@ -214,7 +214,7 @@
   }
 
   ::before,
-::after {
+  ::after {
     --tw-content: '';
   }
 
@@ -229,7 +229,7 @@
 */
 
   html,
-:host {
+  :host {
     line-height: 1.5;
     /* 1 */
     -webkit-text-size-adjust: 100%;
@@ -237,9 +237,10 @@
     -moz-tab-size: 4;
     /* 3 */
     -o-tab-size: 4;
-       tab-size: 4;
+    tab-size: 4;
     /* 3 */
-    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+      'Segoe UI Symbol', 'Noto Color Emoji';
     /* 4 */
     font-feature-settings: normal;
     /* 5 */
@@ -282,7 +283,7 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 
   abbr:where([title]) {
     -webkit-text-decoration: underline dotted;
-            text-decoration: underline dotted;
+    text-decoration: underline dotted;
   }
 
   /*
@@ -290,11 +291,11 @@ Remove the default font size and weight for headings.
 */
 
   h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-size: inherit;
     font-weight: inherit;
   }
@@ -313,7 +314,7 @@ Add the correct font weight in Edge and Safari.
 */
 
   b,
-strong {
+  strong {
     font-weight: bolder;
   }
 
@@ -325,10 +326,11 @@ strong {
 */
 
   code,
-kbd,
-samp,
-pre {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  kbd,
+  samp,
+  pre {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+      'Courier New', monospace;
     /* 1 */
     font-feature-settings: normal;
     /* 2 */
@@ -351,7 +353,7 @@ Prevent `sub` and `sup` elements from affecting the line height in all browsers.
 */
 
   sub,
-sup {
+  sup {
     font-size: 75%;
     line-height: 0;
     position: relative;
@@ -388,10 +390,10 @@ sup {
 */
 
   button,
-input,
-optgroup,
-select,
-textarea {
+  input,
+  optgroup,
+  select,
+  textarea {
     font-family: inherit;
     /* 1 */
     font-feature-settings: inherit;
@@ -419,7 +421,7 @@ Remove the inheritance of text transform in Edge and Firefox.
 */
 
   button,
-select {
+  select {
     text-transform: none;
   }
 
@@ -429,9 +431,9 @@ select {
 */
 
   button,
-input:where([type='button']),
-input:where([type='reset']),
-input:where([type='submit']) {
+  input:where([type='button']),
+  input:where([type='reset']),
+  input:where([type='submit']) {
     -webkit-appearance: button;
     /* 1 */
     background-color: transparent;
@@ -469,7 +471,7 @@ Correct the cursor style of increment and decrement buttons in Safari.
 */
 
   ::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
+  ::-webkit-outer-spin-button {
     height: auto;
   }
 
@@ -518,18 +520,18 @@ Removes the default spacing and border for appropriate elements.
 */
 
   blockquote,
-dl,
-dd,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-hr,
-figure,
-p,
-pre {
+  dl,
+  dd,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  hr,
+  figure,
+  p,
+  pre {
     margin: 0;
   }
 
@@ -543,8 +545,8 @@ pre {
   }
 
   ol,
-ul,
-menu {
+  ul,
+  menu {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -571,7 +573,8 @@ Prevent resizing textareas horizontally by default.
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
 
-  input::-moz-placeholder, textarea::-moz-placeholder {
+  input::-moz-placeholder,
+  textarea::-moz-placeholder {
     opacity: 1;
     /* 1 */
     color: #9ca3af;
@@ -579,7 +582,7 @@ Prevent resizing textareas horizontally by default.
   }
 
   input::placeholder,
-textarea::placeholder {
+  textarea::placeholder {
     opacity: 1;
     /* 1 */
     color: #9ca3af;
@@ -591,7 +594,7 @@ Set the default cursor for buttons.
 */
 
   button,
-[role="button"] {
+  [role='button'] {
     cursor: pointer;
   }
 
@@ -608,15 +611,28 @@ Make sure disabled buttons don't get the pointer cursor.
 2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
    This can trigger a poorly considered lint error in some tools but is included by design.
 */
+  /* for bullet and non bullet in .mdx file*/
+  .no-bullets {
+    list-style: none; /* Remove bullets */
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+  }
+
+  ul,
+  menu {
+    list-style: disc; /* or 'decimal' for ordered lists */
+    margin: 0;
+    padding: 0;
+  }
 
   img,
-svg,
-video,
-canvas,
-audio,
-iframe,
-embed,
-object {
+  svg,
+  video,
+  canvas,
+  audio,
+  iframe,
+  embed,
+  object {
     display: block;
     /* 1 */
     vertical-align: middle;
@@ -628,7 +644,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 */
 
   img,
-video {
+  video {
     max-width: 100%;
     height: auto;
   }
@@ -639,7 +655,9 @@ video {
     display: none;
   }
 
-  *, ::before, ::after{
+  *,
+  ::before,
+  ::after {
     --tw-border-spacing-x: 0;
     --tw-border-spacing-y: 0;
     --tw-translate-x: 0;
@@ -693,7 +711,7 @@ video {
     --tw-contain-style:  ;
   }
 
-  ::backdrop{
+  ::backdrop {
     --tw-border-spacing-x: 0;
     --tw-border-spacing-y: 0;
     --tw-translate-x: 0;
@@ -758,7 +776,7 @@ video {
 
 .text-slider__word {
   opacity: 0;
-  color: #F97316;
+  color: #f97316;
   display: inline-block;
   animation: fadeInOut 5s ease-in-out infinite;
 }
@@ -845,66 +863,66 @@ video {
   font-style: normal;
 }
 
-@media (min-width: 640px){
-  .sm\:-mt-0{
+@media (min-width: 640px) {
+  .sm\:-mt-0 {
     margin-top: -0px;
   }
 
-  .sm\:mt-0{
+  .sm\:mt-0 {
     margin-top: 0px;
   }
 }
 
-@media (min-width: 768px){
-  .md\:left-4{
+@media (min-width: 768px) {
+  .md\:left-4 {
     left: 1rem;
   }
 
-  .md\:mt-0{
+  .md\:mt-0 {
     margin-top: 0px;
   }
 
-  .md\:mt-10{
+  .md\:mt-10 {
     margin-top: 2.5rem;
   }
 
-  .md\:h-\[300px\]{
+  .md\:h-\[300px\] {
     height: 300px;
   }
 
-  .md\:h-\[320px\]{
+  .md\:h-\[320px\] {
     height: 320px;
   }
 
-  .md\:h-\[500px\]{
+  .md\:h-\[500px\] {
     height: 500px;
   }
 
-  .md\:w-\[300px\]{
+  .md\:w-\[300px\] {
     width: 300px;
   }
 
-  .md\:w-\[320px\]{
+  .md\:w-\[320px\] {
     width: 320px;
   }
 
-  .md\:w-\[40\%\]{
+  .md\:w-\[40\%\] {
     width: 40%;
   }
 
-  .md\:w-\[45\%\]{
+  .md\:w-\[45\%\] {
     width: 45%;
   }
 
-  .md\:space-y-20 > :not([hidden]) ~ :not([hidden]){
+  .md\:space-y-20 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
     margin-top: calc(5rem * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(5rem * var(--tw-space-y-reverse));
   }
 }
 
-@media (min-width: 1024px){
-  .lg\:block{
+@media (min-width: 1024px) {
+  .lg\:block {
     display: block;
   }
 }
