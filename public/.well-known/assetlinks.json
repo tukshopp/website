@@ -2,7 +2,7 @@
   {
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
-      "namespace": "Tukshopp",
+      "namespace": "android_app",
       "package_name": "com.tukshopp.tukshopp",
       "sha256_cert_fingerprints": [
         "5c:71:5b:7d:5b:03:03:03:43:88:04:8d:9c:c9:fc:f4:fb:55:e4:04:54:21:53:5a:25:c3:2a:91:53:0c:ef:d6",
