@@ -46,7 +46,7 @@ const HomeWaitListForm = ({ activeStates }: HomeWaitListFormProps) => {
         });
       }
 
-      const res = await axios.post('https://staging-api.tukshopp.ng/v1/miscellaneous/waitlist', {
+      const res = await axios.post('http://staging-api.tukshopp.ng/v1/miscellaneous/waitlist', {
         contactName: '',
         contactEmail: userEmail,
         addressTag: userActiveState,
@@ -104,7 +104,7 @@ const HomeWaitListForm = ({ activeStates }: HomeWaitListFormProps) => {
 
       {!isFormSubmitted ? (
         <Button
-        ff={'Roboto'}
+          ff={'Roboto'}
           bg={'customOrange'}
           loading={isFormSubmitting}
           loaderProps={{ type: 'dots' }}
