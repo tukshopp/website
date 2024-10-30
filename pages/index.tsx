@@ -6,7 +6,7 @@ import { platformBenefits } from '@/utilities/data';
 import HomeTextHeader from '@/components/headers/home-text-header';
 import HomeWaitListForm from '@/components/forms/home-waitlist-form';
 import { Box, Flex, List, Text, Title, AppShell, Container } from '@mantine/core';
-import states from './data/states';
+import states from '../data/states';
 
 interface ActiveState {
   code: string;
