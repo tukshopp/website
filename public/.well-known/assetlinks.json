@@ -1,13 +1,16 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
     "target": {
       "namespace": "android_app",
       "package_name": "com.tukshopp.tukshopp",
       "sha256_cert_fingerprints": [
         "35:49:96:0B:3C:86:4D:E3:01:A9:29:FD:F8:AA:43:E5:D2:1D:AB:ED:33:87:E1:91:5E:AB:83:E3:FF:62:F3:E4",
         "5C:71:5B:7D:5B:03:03:03:43:88:04:8D:9C:C9:fC:f4:fB:55:E4:04:54:21:53:5A:25:C3:2A:91:53:0C:EF:D6",
-        "C1:9A:3E:BC:FE:3E:EC:BF:FB:EF:31:58:77:6C:53:d4:C3:68:5C:D7:5B:D2:99:Cf:C7:68:27:55:f7:BE:74:DB"
+        "C1:9A:3E:BC:FE:3E:EC:BF:FB:EF:31:58:77:6C:53:d4:C3:68:5C:D7:5B:D2:99:Cf:C7:68:27:55:f7:BE:74:DB",
+        "B1:1A:F9:2C:DB:02:D6:84:D0:6F:EF:C3:D3:B7:29:BB:A8:8E:61:34:60:A8:24:DD:01:C2:68:B0:17:39:A4:F2"
       ]
     }
   }
