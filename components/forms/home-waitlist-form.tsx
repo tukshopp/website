@@ -104,7 +104,7 @@ const HomeWaitListForm = ({ activeStates }: HomeWaitListFormProps) => {
 
       {!isFormSubmitted ? (
         <Button
-        ff={'Roboto'}
+          ff={'Roboto'}
           bg={'customOrange'}
           loading={isFormSubmitting}
           loaderProps={{ type: 'dots' }}

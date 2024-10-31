@@ -6,6 +6,7 @@ import { platformBenefits } from '@/utilities/data';
 import HomeTextHeader from '@/components/headers/home-text-header';
 import HomeWaitListForm from '@/components/forms/home-waitlist-form';
 import { Box, Flex, List, Text, Title, AppShell, Container } from '@mantine/core';
+import states from '../data/states';
 
 interface ActiveState {
   code: string;
@@ -14,13 +15,7 @@ interface ActiveState {
   country_code: string;
 }
 
-export async function getServerSideProps() {
-  const res = await fetch('https://staging-api.tukshopp.ng/v1/miscellaneous/states');
-  const data = await res.json();
-  return { props: { activeStates: data } };
-}
-
-export default function HomePage({ activeStates }: { activeStates: ActiveState[] }) {
+export default function HomePage() {
   const waitListRef = useRef<HTMLDivElement | null>(null);
 
   const handleWaitListRefClick = () => {
@@ -60,7 +55,7 @@ export default function HomePage({ activeStates }: { activeStates: ActiveState[]
 
                 <Text size="sm">Everything you need, delivered when you need it.</Text>
 
-                <HomeWaitListForm activeStates={activeStates} />
+                <HomeWaitListForm activeStates={states} />
               </Box>
 
               <Box className="w-full md:w-[45%] h-[400px] md:h-[500px] mt-5 md:mt-0 relative">

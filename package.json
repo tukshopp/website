@@ -17,10 +17,12 @@
     "prettier:write": "prettier --write \"**/*.{ts,tsx}\"",
     "test": "npm run prettier:check && npm run lint && npm run typecheck && npm run jest",
     "storybook": "storybook dev -p 6006",
-    "storybook:build": "storybook build"
+    "storybook:build": "storybook build",
+    "gen-auth-catalog": "openapi-generator-cli generate -i https://staging-api.tukshopp.ng/docs/auth-service-json -g typescript-axios -o src/sdk/auth"
   },
   "dependencies": {
     "@mantine/core": "7.11.1",
+    "@mantine/form": "^7.13.4",
     "@mantine/hooks": "7.11.1",
     "@mantine/notifications": "^7.11.2",
     "@mdx-js/loader": "^3.0.1",
