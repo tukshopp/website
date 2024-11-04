@@ -6,14 +6,11 @@ import {
   IconBrandLinkedin,
   IconBrandInstagram,
 } from '@tabler/icons-react/dist/cjs/tabler-icons-react.cjs';
-import { Box, Button, Divider, Flex, Text, Title } from '@mantine/core';
-import { IconBrandFacebook } from '@tabler/icons-react';
+import { Anchor, Box, Button, Divider, Flex, Group, Text, Title } from '@mantine/core';
+import { IconBrandApple, IconBrandFacebook } from '@tabler/icons-react';
+import { Apple01Icon, AppleStocksIcon, PlayStoreIcon } from 'hugeicons-react';
 
-interface FooterProps {
-  handleWaitListClick: () => void;
-}
-
-const Footer = ({ handleWaitListClick }: FooterProps) => {
+const Footer = () => {
   return (
     <Box
       w={'100%'}
@@ -28,6 +25,7 @@ const Footer = ({ handleWaitListClick }: FooterProps) => {
         direction={'column'}
         className="text-center"
         justify={'space-between'}
+        mb={10}
       >
         <Flex align={'center'} direction={'column'} gap={10}>
           <Image
@@ -41,32 +39,28 @@ const Footer = ({ handleWaitListClick }: FooterProps) => {
             Excited to get started?
           </Title>
           <Text size="sm" c={'white'} className="z-10">
-            Join the waitlist to stay informed and be the first to experience it.
+            It’s here! Your exclusive access is just a click away—join us now!{' '}
           </Text>
-          <Button
-            bg={'white'}
-            c={'black'}
-            className="z-10"
-            onClick={handleWaitListClick}
-            style={{ height: 40, fontSize: 12, borderRadius: 15 }}
-          >
-            Join Waitlist
-          </Button>
         </Flex>
-
+        <Flex gap={2}>
+          <Image alt="" src={'/icons/icon_playicon.svg'} width={15} height={15} />
+          <Divider color="white" size={'sm'} orientation="vertical" />
+          <Image alt="" src={'/icons/icon_appleicon.svg'} width={15} height={15} />
+          <Text c={'white'} size="sm">
+            Download mobile app
+          </Text>
+        </Flex>
         <Box w={'100%'} className="z-10">
           <Divider variant="solid" color={'customLightOrange'} size={'xs'} />
         </Box>
-
-        <Flex align={'center'} justify={'center'} direction={'column'} gap={10} className="z-10">
-          <Flex align={'center'} direction={'row'} gap={20}>
+      </Flex>
+      <Group justify="space-between">
+        <Flex direction={'column'} gap={10} className="z-10">
+          <Flex direction={'row'}>
             <Link href="https://x.com/Tukshopp" target="_blank">
               <IconBrandX size={30} color="white" />
             </Link>
-            <Link
-              href="https://www.instagram.com/tukshoppapp/"
-              target="_blank"
-            >
+            <Link href="https://www.instagram.com/tukshoppapp/" target="_blank">
               <IconBrandInstagram size={30} color="white" />
             </Link>
             <Link href="https://web.facebook.com/profile.php?id=61563006697064" target="_blank">
@@ -78,7 +72,19 @@ const Footer = ({ handleWaitListClick }: FooterProps) => {
             Connect with us on social media for the latest news and sneak peeks!
           </Text>
         </Flex>
-      </Flex>
+        <Group>
+          <Link href="/terms">
+            <Text c={'white'} className="z-10" size="sm">
+              Terms of use
+            </Text>
+          </Link>
+          <Link href="/privacy-policy">
+            <Text c={'white'} className="z-10" size="sm">
+              Privacy policy
+            </Text>
+          </Link>
+        </Group>
+      </Group>
     </Box>
   );
 };

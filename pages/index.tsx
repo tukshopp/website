@@ -1,27 +1,29 @@
 import Image from 'next/image';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import NavBar from '@/components/navigation/navbar';
 import Footer from '@/components/navigation/footer';
 import { platformBenefits } from '@/utilities/data';
 import HomeTextHeader from '@/components/headers/home-text-header';
 import HomeWaitListForm from '@/components/forms/home-waitlist-form';
-import { Box, Flex, List, Text, Title, AppShell, Container } from '@mantine/core';
+import { Box, Flex, List, Text, Title, AppShell, Container, Button } from '@mantine/core';
 import states from '../data/states';
 
-interface ActiveState {
-  code: string;
-  name: string;
-  slug: string;
-  country_code: string;
-}
-
 export default function HomePage() {
-  const waitListRef = useRef<HTMLDivElement | null>(null);
+  const [loadingRider, setLoadingRider] = useState(false);
+  const [loadingVendor, setLoadingVendor] = useState(false);
 
-  const handleWaitListRefClick = () => {
-    if (waitListRef.current) {
-      waitListRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+  const handleRiderClick = () => {
+    setLoadingRider(true); // Set loading state to true for rider
+    setTimeout(() => {
+      window.location.href = 'https://rider.tukshopp.ng';
+    }, 500); // Adjust time as necessary
+  };
+
+  const handleVendorClick = () => {
+    setLoadingVendor(true); // Set loading state to true for vendor
+    setTimeout(() => {
+      window.location.href = 'https://vendor.tukshopp.ng';
+    }, 500); // Adjust time as necessary
   };
 
   return (
@@ -38,13 +40,10 @@ export default function HomePage() {
               direction={{ base: 'column', sm: 'row' }}
               justify={{ sm: 'start', lg: 'space-between' }}
             >
-              <Box ref={waitListRef} className="space-y-5 w-full md:w-[45%] -mt-10 sm:-mt-0">
+              <Box className="space-y-5 w-full md:w-[45%] -mt-10 sm:-mt-0">
                 <Box className="flex space-x-2">
-                  <Text style={{ fontSize: 11 }} fw={'bold'}>
-                    Launching soon!
-                  </Text>
                   <Text style={{ fontSize: 11 }} fw={'normal'}>
-                    Join waitlist and be the first to experience it
+                    Enjoy tasty offer from multiple vendors!
                   </Text>
                   {/* <span className="hidden lg:block font-normal text-inherit">
                     Join waitlist and be the first to experience it
@@ -78,10 +77,12 @@ export default function HomePage() {
           {/* DISCOVERY */}
           <Container w={'100%'} py={{ base: 5, md: 10 }} mt={{ base: 5, md: 40 }}>
             <Box className="mx-auto text-center w-full md:w-[40%] space-y-3">
-              <Title order={4} ff={'Gotham'}>
+              <Title order={2} ff={'Gotham'}>
                 Discover the benefits of our versatile delivery service
               </Title>
-              <Text size="sm">Effortless convenience at your fingertips</Text>
+              <Text size="sm" c="#7E7E80">
+                Effortless convenience at your fingertips
+              </Text>
             </Box>
 
             <Flex
@@ -200,6 +201,16 @@ export default function HomePage() {
                     Expand Your Reach and Manage Effortlessly
                   </Title>
                 </Box>
+                <Button
+                  ff={'Roboto'}
+                  bg={'customOrange'}
+                  loaderProps={{ type: 'dots' }}
+                  onClick={handleVendorClick}
+                  loading={loadingVendor}
+                  style={{ height: 40, fontSize: 12, borderRadius: 15 }}
+                >
+                  Join as a vendor
+                </Button>
 
                 <List
                   spacing="lg"
@@ -241,6 +252,16 @@ export default function HomePage() {
                     Optimize Your Deliveries and Boost Earnings
                   </Title>
                 </Box>
+                <Button
+                  ff={'Roboto'}
+                  bg={'customOrange'}
+                  loaderProps={{ type: 'dots' }}
+                  onClick={handleRiderClick}
+                  loading={loadingRider}
+                  style={{ height: 40, fontSize: 12, borderRadius: 15 }}
+                >
+                  Join as a rider
+                </Button>
 
                 <List
                   spacing="lg"
@@ -274,7 +295,7 @@ export default function HomePage() {
           </Container>
 
           {/* FOOTER */}
-          <Footer handleWaitListClick={handleWaitListRefClick} />
+          <Footer />
         </AppShell.Main>
       </AppShell>
     </>

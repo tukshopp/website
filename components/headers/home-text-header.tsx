@@ -8,20 +8,17 @@ const HomeTextHeader = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const wordChangeInterval = setInterval(() => {
       setCurrentWordIndex((prevIndex) => (prevIndex + 1) % HeaderWords.length);
-    }, 5100);
+    }, 2000);
 
-    return () => clearInterval(interval);
+    return () => clearInterval(wordChangeInterval);
   }, []);
 
   return (
     <Title style={{ fontFamily: 'Gotham', fontWeight: 800 }} order={1}>
-      Get your{' '}
-      <span className="mantine-Title text-[#F97316] text-slider__word">
-        {HeaderWords[currentWordIndex]}
-      </span>{' '}
-      delivered to your doorstep
+      Get your <span style={{ color: '#F97316' }}>{HeaderWords[currentWordIndex]}</span> delivered
+      to your doorstep
     </Title>
   );
 };
