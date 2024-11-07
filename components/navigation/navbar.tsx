@@ -1,9 +1,16 @@
 import React from 'react';
 import Image from 'next/image';
 import { theme } from '@/theme';
-import { Anchor, Box, Button, Container, Flex } from '@mantine/core';
+import { Anchor, Box, Button, Container, Flex, Menu } from '@mantine/core';
 
 const NavBar = () => {
+  const handleVendorClick = () => {
+    window.location.href = 'https://vendor.tukshopp.ng';
+  };
+
+  const handleRiderClick = () => {
+    window.location.href = 'https://rider.tukshopp.ng';
+  };
   return (
     <Container w={'100%'} h={40} my={10} className="sticky top-2 z-10">
       <Flex h={'100%'} w={'100%'} justify={'space-between'} align={'center'}>
@@ -27,9 +34,30 @@ const NavBar = () => {
             <Image fill alt="" src={'/icons/icon_tukshop_clif.svg'} />
           </Anchor>
 
-          <Button style={{ height: 30, fontSize: 12 }} bg={'customLightOrange'}>
-            Coming Soon
-          </Button>
+          <Menu shadow="md" width={187}>
+            <Menu.Target>
+              <Button
+                style={{
+                  height: 30,
+                  fontSize: 12,
+                  color: 'black',
+                  backgroundColor: 'white',
+                  borderRadius: '8px',
+                }}
+              >
+                Join Tukshopp
+              </Button>
+            </Menu.Target>
+
+            <Menu.Dropdown>
+              <Menu.Item c="#3C3C3D" onClick={handleVendorClick}>
+                Join as a vendor
+              </Menu.Item>
+              <Menu.Item c="#3C3C3D" onClick={handleRiderClick}>
+                Join as a rider
+              </Menu.Item>
+            </Menu.Dropdown>
+          </Menu>
         </Flex>
       </Flex>
     </Container>
