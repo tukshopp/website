@@ -7,6 +7,7 @@ import {
 } from '@tabler/icons-react/dist/cjs/tabler-icons-react.cjs';
 import { Anchor, Box, Button, Flex, Select, Text, TextInput, UnstyledButton } from '@mantine/core';
 import Image from 'next/image';
+import { AppStoreDownloadURL, PlayStoreDownloadURL } from '@/data';
 
 interface ActiveState {
   code: string;
@@ -23,11 +24,23 @@ const HomeWaitListForm = ({ activeStates }: HomeWaitListFormProps) => {
   return (
     <>
       <Flex gap={10}>
-        <UnstyledButton ff={'Roboto'} style={{ height: 40, fontSize: 12, borderRadius: 15 }}>
+        <UnstyledButton
+          ff={'Roboto'}
+          style={{ height: 40, fontSize: 12, borderRadius: 15 }}
+          onClick={() => {
+            window.open(AppStoreDownloadURL, '_blank');
+          }}
+        >
           <Image alt="" src={'/icons/icon_appstore.svg'} width={120} height={40} />
         </UnstyledButton>
 
-        <UnstyledButton ff={'Roboto'} style={{ height: 40, fontSize: 12, borderRadius: 15 }}>
+        <UnstyledButton
+          ff={'Roboto'}
+          style={{ height: 40, fontSize: 12, borderRadius: 15 }}
+          onClick={() => {
+            window.open(PlayStoreDownloadURL, '_blank');
+          }}
+        >
           <Image alt="" src={'/icons/icon_playstore.svg'} width={120} height={40} />
         </UnstyledButton>
       </Flex>

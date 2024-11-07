@@ -39,7 +39,7 @@ export default function PageLayout({
           <Container w={'100%'}>
             <TypographyStylesProvider>{children}</TypographyStylesProvider>
           </Container>
-          <Footer handleWaitListClick={() => {}} />
+          <Footer />
         </Stack>
       </AppShell.Main>
     </AppShell>

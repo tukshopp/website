@@ -5,11 +5,11 @@ import { Anchor, Box, Button, Container, Flex, Menu } from '@mantine/core';
 
 const NavBar = () => {
   const handleVendorClick = () => {
-    window.location.href = 'https://vendor.tukshopp.ng';
+    window.open('https://vendor.tukshopp.ng', '_blank');
   };
 
   const handleRiderClick = () => {
-    window.location.href = 'https://rider.tukshopp.ng';
+    window.open('https://rider.tukshopp.ng', '_blank');
   };
   return (
     <Container w={'100%'} h={40} my={10} className="sticky top-2 z-10">

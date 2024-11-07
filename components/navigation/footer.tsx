@@ -3,14 +3,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {
   IconBrandX,
-  IconBrandLinkedin,
   IconBrandInstagram,
 } from '@tabler/icons-react/dist/cjs/tabler-icons-react.cjs';
-import { Anchor, Box, Button, Divider, Flex, Group, Text, Title } from '@mantine/core';
-import { IconBrandApple, IconBrandFacebook } from '@tabler/icons-react';
-import { Apple01Icon, AppleStocksIcon, PlayStoreIcon } from 'hugeicons-react';
+import { Box, Divider, Flex, Group, Text, Title } from '@mantine/core';
+import { IconBrandFacebook } from '@tabler/icons-react';
 
 const Footer = () => {
+  function downloadApp() {}
   return (
     <Box
       w={'100%'}
@@ -46,7 +45,7 @@ const Footer = () => {
           <Image alt="" src={'/icons/icon_playicon.svg'} width={15} height={15} />
           <Divider color="white" size={'sm'} orientation="vertical" />
           <Image alt="" src={'/icons/icon_appleicon.svg'} width={15} height={15} />
-          <Text c={'white'} size="sm">
+          <Text c={'white'} size="sm" onClick={downloadApp}>
             Download mobile app
           </Text>
         </Flex>
