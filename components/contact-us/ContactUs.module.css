@@ -7,6 +7,11 @@
     ); */
     background-color: var(--mantine-color-gray-1) ;
     border-radius: var(--mantine-radius-md);
+    padding: calc(var(--mantine-spacing-xl) * 2.5);
+  
+    @media (max-width: $mantine-breakpoint-sm) {
+      padding: calc(var(--mantine-spacing-md) * 1.5);
+    }
   }
   
   .title {
