@@ -19,7 +19,7 @@
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build",
     "gen-auth-catalog": "openapi-generator-cli generate -i https://staging-api.tukshopp.ng/docs/auth-service-json -g typescript-axios -o src/sdk/auth",
-    "gen-auth-catalog": "openapi-generator-cli generate -i https://staging-api.tukshopp.ng/docs/auth-service-json -g typescript-axios -o src/sdk/auth"
+    "gen-utils-catalog": "openapi-generator-cli generate -i https://staging-api.tukshopp.ng/docs/miscellaneous-service-json -g typescript-axios -o src/sdk/utils"
   },
   "dependencies": {
     "@mantine/core": "7.11.1",

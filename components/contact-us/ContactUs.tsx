@@ -7,17 +7,17 @@ import {
   Button,
   Group,
   ActionIcon,
+  Select,
 } from '@mantine/core';
-import {
-  IconBrandInstagram,
-  IconX,
-  IconBrandX,
-  IconBrandFacebook,
-} from '@tabler/icons-react';
+import { IconBrandInstagram, IconX, IconBrandX, IconBrandFacebook } from '@tabler/icons-react';
 
 import classes from './ContactUs.module.css';
 import { ContactIconsList } from './ContactIcons';
 import Link from 'next/link';
+import { useForm } from '@mantine/form';
+import { ContactUsDto, CustomerFeedbackApi } from '@/src/sdk/utils';
+import { showNotification } from '@mantine/notifications';
+import { useState } from 'react';
 
 const social = [
   { Icon: IconBrandInstagram, path: 'https://www.instagram.com/tukshoppapp/' },
@@ -26,8 +26,19 @@ const social = [
 ];
 
 export function ContactUs() {
+  const [loading, setLoading] = useState(false);
+  const form = useForm<ContactUsDto>({
+    initialValues: {
+      comments: '',
+      email: '',
+      name: '',
+      phone: '',
+      subject: '',
+    },
+  });
+
   const icons = social.map(({ Icon, path }, index) => (
-    <Link href={path} target="_blank">
+    <Link href={path} target="_blank" key={index}>
       <ActionIcon
         key={index}
         p="sm"
@@ -54,32 +65,83 @@ export function ContactUs() {
 
           <Group mt="xl">{icons}</Group>
         </div>
-        <div className={classes.form}>
+        <form
+          className={classes.form}
+          onSubmit={form.onSubmit(async (values) => {
+            try {
+              setLoading(true);
+              await new CustomerFeedbackApi().customerFeedbackControllerSubmitContactUs(values);
+              form.reset();
+              showNotification({
+                title: 'Success',
+                message: 'Your message has been sent successfully',
+                color: 'green',
+                autoClose: 5000,
+              });
+              setLoading(false);
+            } catch (err) {
+              setLoading(false);
+              showNotification({
+                title: 'Error',
+                message: 'Something went wrong',
+                color: 'red',
+                autoClose: 5000,
+              });
+            }
+          })}
+        >
           <TextInput
-            label="Email"
-            placeholder="your@email.com"
+            label="Phone"
+            placeholder="Your phone number"
             required
             classNames={{ input: classes.input, label: classes.inputLabel }}
+            {...form.getInputProps('phone')}
+          />
+          <TextInput
+            label="Email"
+            mt="md"
+            placeholder="Your email"
+            required
+            classNames={{ input: classes.input, label: classes.inputLabel }}
+            {...form.getInputProps('email')}
           />
           <TextInput
             label="Name"
-            placeholder="John Doe"
+            {...form.getInputProps('name')}
             mt="md"
+            placeholder="Your name"
             classNames={{ input: classes.input, label: classes.inputLabel }}
+          />
+          <Select
+            label="Subject"
+            {...form.getInputProps('subject')}
+            mt="md"
+            placeholder="Select subject"
+            classNames={{ input: classes.input, label: classes.inputLabel }}
+            data={[
+              { value: 'delivery_issues', label: 'Delivery or Order Issues' },
+              { value: 'rider_vendor_feedback', label: 'Feedback on Riders or Vendors' },
+              { value: 'marketing_feedback', label: 'Marketing and Business Feedback' },
+              { value: 'partnership_inquiry', label: 'Partnership Inquiries' },
+              { value: 'other', label: 'Other Concerns' },
+            ]}
           />
           <Textarea
             required
             label="Your message"
-            placeholder="I want to order your goods"
+            {...form.getInputProps('comments')}
+            placeholder="Type here"
             minRows={4}
             mt="md"
             classNames={{ input: classes.input, label: classes.inputLabel }}
           />
 
           <Group justify="flex-end" mt="md">
-            <Button className={classes.control}>Send message</Button>
+            <Button className={classes.control} type="submit" loading={loading}>
+              Send message
+            </Button>
           </Group>
-        </div>
+        </form>
       </SimpleGrid>
     </div>
   );
