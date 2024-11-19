@@ -18,6 +18,7 @@
     "test": "npm run prettier:check && npm run lint && npm run typecheck && npm run jest",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build",
+    "gen-auth-catalog": "openapi-generator-cli generate -i https://staging-api.tukshopp.ng/docs/auth-service-json -g typescript-axios -o src/sdk/auth",
     "gen-auth-catalog": "openapi-generator-cli generate -i https://staging-api.tukshopp.ng/docs/auth-service-json -g typescript-axios -o src/sdk/auth"
   },
   "dependencies": {
