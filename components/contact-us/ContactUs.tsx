@@ -8,6 +8,7 @@ import {
   Group,
   ActionIcon,
   Select,
+  Box,
 } from '@mantine/core';
 import { IconBrandInstagram, IconX, IconBrandX, IconBrandFacebook } from '@tabler/icons-react';
 
@@ -53,11 +54,11 @@ export function ContactUs() {
   ));
 
   return (
-    <div className={classes.wrapper}>
+    <Box p={"md"} className={classes.wrapper}>
       <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={50}>
         <div>
           <Title className={classes.title}>Contact us</Title>
-          <Text className={classes.description} mt="sm" mb={30}>
+          <Text c={"dimmed"} size='md' mb={10}>
             Leave your email and we will get back to you within 24 hours
           </Text>
 
@@ -143,6 +144,6 @@ export function ContactUs() {
           </Group>
         </form>
       </SimpleGrid>
-    </div>
+    </Box>
   );
 }
