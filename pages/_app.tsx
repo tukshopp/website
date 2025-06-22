@@ -3,7 +3,7 @@ import './styles/index.css';
 import './styles/output.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { AppShell, MantineProvider } from '@mantine/core';
+import { MantineProvider } from '@mantine/core';
 import { theme } from '../theme';
 import { Notifications } from '@mantine/notifications';
 
