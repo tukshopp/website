@@ -1,38 +1,82 @@
-# Mantine Next.js template
+# Tukshopp Customer Web Marketplace
 
-This is a template for [Next.js](https://nextjs.org/) pages router + [Mantine](https://mantine.dev/).
-If you want to use app router instead, see [next-app-template](https://github.com/mantinedev/next-app-template).
+> Production URL: <https://tukshopp.ng>
 
-## Features
+This repository contains the customer-facing web marketplace for **Tukshopp**—a commerce platform that connects customers with local vendors for on-demand delivery.
 
-This template comes with the following features:
+⚠️ **Note:** The repository currently hosts a basic landing/marketing site. The fully-featured marketplace flows listed below are to be implemented during the assessment.
 
-- [PostCSS](https://postcss.org/) with [mantine-postcss-preset](https://mantine.dev/styles/postcss-preset)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Storybook](https://storybook.js.org/)
-- [Jest](https://jestjs.io/) setup with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
-- ESLint setup with [eslint-config-mantine](https://github.com/mantinedev/eslint-config-mantine)
+## ✨ Key Features
 
-## npm scripts
+• **Authentication** – Email/password or phone/OTP login using Tukshopp Auth Service.  
+• **Marketplace Feed** – Infinite-scroll product grid inspired by the mobile app home screen.  
+• **Search** – Unified search across products & vendors with instant results.  
+• **Vendor Profile** – Banner, ratings, opening hours and full catalogue.  
+• **Cart Management** – Add / update / remove items via SDK cart endpoints, state persisted across sessions.  
+• **Checkout Flow** – Order intent and summary page (payment step stubbed).  
+• **Responsive UI** – Built with [Mantine](https://mantine.dev/) + Tailwind for rapid, accessible components.  
+• **Storybook & Tests** – Component isolation and Jest/RTL tests for reliability.
 
-### Build and dev scripts
+## 🏗️ Tech Stack
 
-- `dev` – start dev server
-- `build` – bundle application for production
-- `export` – exports static website to `out` folder
-- `analyze` – analyzes application bundle with [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)
+| Layer | Technology |
+|-------|------------|
+| Framework | Next.js (Pages Router) |
+| Language  | TypeScript |
+| UI        | Mantine UI + TailwindCSS |
+| State     | Zustand / Redux Toolkit |
+| Data-Fetching | TanStack Query |
+| API Client | Auto-generated SDK in `src/sdk` (OpenAPI) |
+| Tooling   | Jest • Storybook • ESLint • Prettier |
 
-### Testing scripts
+## 🔧 Getting Started
 
-- `typecheck` – checks TypeScript types
-- `lint` – runs ESLint
-- `prettier:check` – checks files with Prettier
-- `jest` – runs jest tests
-- `jest:watch` – starts jest watch
-- `test` – runs `jest`, `prettier:check`, `lint` and `typecheck` scripts
+```bash
+# 1. Clone
+$ git clone https://github.com/tukshopp/website.git && cd website
 
-### Other scripts
+# 2. Install deps (Yarn 1.x)
+$ yarn
 
-- `storybook` – starts storybook dev server
-- `storybook:build` – build production storybook bundle to `storybook-static`
-- `prettier:write` – formats all files with Prettier
+# 3. Configure environment
+$ cp .env.example .env.local
+# → fill NEXT_PUBLIC_API_BASE_URL and any other vars
+
+# 4. Run in dev mode
+$ yarn dev
+```
+
+Visit <http://localhost:3000> to see the app.
+
+## 🗺️ Project Structure (excerpt)
+
+```text
+components/      reusable UI & feature components
+data/            static fixture data
+pages/           Next.js pages (routes)
+src/sdk/         Auto-generated API client
+styles/          Global styles (Tailwind)
+storybook/       Component explorer config
+test-utils/      Jest / RTL helpers
+```
+
+## 📑 API & Docs
+
+<!-- Detailed API references are internal. Refer to the generated SDK in `src/sdk` or request access if needed. -->
+
+## 🎨 Design Resources
+
+Figma mobile reference: <https://www.figma.com/design/nTdzRs4uGnF4qyR4sHhQDn/Tukshopp?node-id=25-1970&p=f&t=FLExi6dNr7UwDD7X-0>
+
+## 🤝 Contributing
+
+1. Create a branch `your-name/task` (e.g. `jane-doe/checkout-flow`).  
+2. Commit early & often, push to GitHub.  
+3. Your branch will be reviewed directly—no need to open a PR to `master`.
+
+## 🗣️ Support / Questions
+
+Email **tshopppro@gmail.com** and someone from the team will get back to you.
+
+---
+© Tukshopp 2025. All rights reserved.
