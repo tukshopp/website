@@ -83,7 +83,7 @@ Setup new account using auth service.
 5. **Mobile prototype**: Record a short demo video and email it, along with the GitHub branch URL, to **care@tukshopp.com**.
 
 ## 5. Deadline
-All deliverables are due **by the 28th of this month, 23:59 UTC**.
+All deliverables are due **by the 28th of this month**.
 
 ## 6. Reference Links
 - 🛒 iOS App: https://apps.apple.com/us/app/tukshopp/id6737780806  
