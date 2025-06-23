@@ -88,7 +88,7 @@ All deliverables are due **by the 30th of this month**.
 ## 6. Reference Links
 - 🛒 iOS App: https://apps.apple.com/us/app/tukshopp/id6737780806  
 - 🛒 Android App: https://play.google.com/store/apps/details?id=com.tukshopp.tukshopp
-+- 🎨 Figma Design (Customer Mobile App): https://www.figma.com/design/nTdzRs4uGnF4qyR4sHhQDn/Tukshopp?node-id=25-1970&p=f&t=FLExi6dNr7UwDD7X-0  
+- 🎨 Figma Design (Customer Mobile App): https://www.figma.com/design/nTdzRs4uGnF4qyR4sHhQDn/Tukshopp?node-id=25-1970&p=f&t=FLExi6dNr7UwDD7X-0  
 
 ### Swagger Documentation
 - Auth Service: https://api.tukshopp.ng/docs/auth-service  
