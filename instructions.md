@@ -22,7 +22,7 @@ Implement the following flows/pages **using the generated TypeScript SDK located
 +The SDK already exposes endpoints for user feed, search, cart management, order intent, and more—refer to the Swagger docs. If you discover a missing capability, you may temporarily add custom API functions (with proper typing) and note them.
 
 1. **Authentication**  
-   *Endpoints*: `/auth/login`, `/auth/otp/request`  
+   *Endpoints*: `/v1/auth/signin`, `/v1/auth/sigin-with-otp`  
    *Acceptance*:
    - User can sign-in with `email + password` **or** `phone + OTP`.
    - Display error component for invalid credentials.
