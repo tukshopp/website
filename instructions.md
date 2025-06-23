@@ -11,8 +11,8 @@ This assessment gauges your ability to **self-onboard quickly**, work **independ
 ## 2. Scope & Tech Stack
 | Platform | Stack | Codebase |
 | -------- | ----- | -------- |
-| Web (required) | **Next.js** (React + TypeScript) | The provided `tukshopp-website` project<br/>*Use the pre-configured Tailwind, MantineUI & component library already in the repo.* |
-| Mobile (bonus) | **React Native** *or* **Flutter** | A fresh prototype project |
+| Web (bonus) | **Next.js** (React + TypeScript) | The provided `tukshopp-website` project<br/>*Use the pre-configured Tailwind, MantineUI & component library already in the repo.* |
+| Mobile (required) | **React Native** *or* **Flutter** | A fresh prototype project |
 
 The same **production APIs** used by Tukshopp's mobile app are available for both deliverables.
 
